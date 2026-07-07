@@ -1,9 +1,18 @@
 #include <iostream>
 using namespace std;
-int main() {
+int main(){
     string name;
-    cout << "Enter your name: ";
+    string add;
+    int num;
+    cout << "Enter your name: " ;
     cin >> name;
-    cout << "Hello " << name << "!";
-    return 0;
+    cout << "Enter your address: ";
+    cin >> add;
+    cout << "Enter your phone number: ";
+    cin >> num;
+    cout << "________________Your BioData__________________\n";
+    cout <<"Name : " <<name <<"\n" ;
+    cout << "Address : " <<add << "\n";
+    cout << "Contact : "<< num << "\n";
+
 }
