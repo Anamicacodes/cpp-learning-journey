@@ -30,5 +30,26 @@ int main(){
             cout << "enter a valid number!";
     }
 
-    
+   switch (day) {
+        case 1:
+            cout << "Monday" ;
+            break;
+        case 2: 
+            cout << "Tuesday";
+        case 3:
+            cout << "Wednesday";
+
+        case 4:
+            cout << "Thrusday";
+            break;
+        case 5: 
+            cout << "Friday";
+            break;
+        case 6: 
+            cout << "Saturday";
+        case 7 :
+            cout << "Sunday";
+        default :
+            cout << "enter a valid number!";    //entering 6 as input gives saturday sunday and default value
+    } 
 }
