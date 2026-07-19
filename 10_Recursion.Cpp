@@ -47,7 +47,7 @@ int sum_of_N(int n){
     if (num == n){
         return n;
     }
-    int sum = num + sum_of_N (num, n);
+    int sum = num + sum_of_N (num+1, n);
     return sum; 
 }
      */
@@ -56,10 +56,10 @@ int poww(int num, int n){
     if(n==1){
         return num;
     }
-    if ( power == 0){
+    if ( n == 0){
         return 1;
     }
-    return power = num * poww(num,n-1);
+    return num * poww(num,n-1);
     
 }
 
@@ -71,6 +71,15 @@ int fab(int n){
         return 1;
     }
     return fab(n-1) + fab(n-2);
+}
+
+int count_digits (int n){
+    if (n/10 <= 0){
+        return 1;
+    }
+    int count=0;
+    return count_digits(n/10);
+    count++;
 }
 
 int main(){
@@ -93,4 +102,8 @@ int main(){
     cin >> raised_to;
     cout << "Power of " << power_of << " raised to " << raised_to << " is: " << poww(power_of, raised_to) << endl;
     cout << "Fabonacci series of " << n << " is: " << fab(n) << endl ;
+    int long_num;
+    cout << "Enter a long number : ";
+    cin >> long_num;
+    cout << "Count of number of digits in " << long_num << " : " << count_digits(long_num) << endl;
 }
