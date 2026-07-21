@@ -74,13 +74,27 @@ int fab(int n){
 }
 
 int count_digits (int n){
-    if (n/10 <= 0){
+    if (n<10){
         return 1;
     }
-    int count=0;
-    return count_digits(n/10);
-    count++;
+    return 1+ count_digits(n/10);
 }
+
+int sum_of_digits(int n){
+    if(n<10){
+        return n;
+    }
+    return n%10 + sum_of_digits(n/10);
+}
+
+int reverse_num ( int n){
+    if(n<10){
+        return n;
+    }
+    return n%10 * poww(10,count_digits(n/10)) + reverse_num(n/10);
+}
+
+
 
 int main(){
     int num;
@@ -106,4 +120,6 @@ int main(){
     cout << "Enter a long number : ";
     cin >> long_num;
     cout << "Count of number of digits in " << long_num << " : " << count_digits(long_num) << endl;
+    cout << "Sum of digits of the long number: " << sum_of_digits(long_num) << endl ;
+    cout << "Reverse of the number : " << reverse_num(long_num)<< endl;
 }
