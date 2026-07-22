@@ -94,8 +94,44 @@ int reverse_num ( int n){
     return n%10 * poww(10,count_digits(n/10)) + reverse_num(n/10);
 }
 
+void reverse_str(string &s, int left , int right){
+    if (left >= right){
+        return ;
+    }
+    swap(s[left], s[right]);
+    reverse_str(s, left+1,right-1);
+}
 
+void palindrome(string &s,int left,int right){
+    if (s[left] != s[right]){
+        cout << "Not a palindrome!";
+    }
+    else {
+        if (left >=right){
+            cout << "It is a palindrome";
+        return;
+    }
+        palindrome(s,left+1,right-1);
+    }
+}
 
+bool palin(string &s,int left,int right){
+    if(s[left]!=s[right]){
+        return false;
+    }
+    if(left >= right){
+        return true;
+    }
+    return palin(s,left+1,right-1);
+}
+
+int maximum(int arr[], int index, int curmax){
+    if (index == arr.length()-1){
+        return curmax;
+    }
+    curmax = arr[0];
+    return maximum(arr[],index +1, curmax);
+}
 int main(){
     int num;
     cout << "Enter a number : " ;
@@ -122,4 +158,12 @@ int main(){
     cout << "Count of number of digits in " << long_num << " : " << count_digits(long_num) << endl;
     cout << "Sum of digits of the long number: " << sum_of_digits(long_num) << endl ;
     cout << "Reverse of the number : " << reverse_num(long_num)<< endl;
+    string s_string;
+    cout << "Enter a string : ";
+    cin >> s_string;
+    reverse_str(s_string,0,s_string.length()-1);
+    cout << "Reverse of a string : " << s_string << endl ;
+    palindrome(s_string,0,s_string.length()-1) ;
+    cout<< endl;
+    cout << "Is it a palindrome using bool function: " << palin(s_string,0,s_string.length()-1);
 }
