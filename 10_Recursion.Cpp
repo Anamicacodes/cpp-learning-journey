@@ -125,13 +125,21 @@ bool palin(string &s,int left,int right){
     return palin(s,left+1,right-1);
 }
 
-int maximum(int arr[], int index, int curmax){
-    if (index == arr.length()-1){
+int maximum(int arr[], int index, int curmax, int size){
+    if (index == size){
         return curmax;
     }
-    curmax = arr[0];
-    return maximum(arr[],index +1, curmax);
+    curmax = max(curmax,arr[index]);   //or curmax= arr[0]  if(arr[index]> curmax){ curmax = arr[index]}
+    return maximum(arr,index +1, curmax,size);
 }
+
+int sum_of_arr(int arr[],int index, int size){
+    if(index == size){
+        return 0;
+    }
+    return arr[index] + sum_of_arr(arr,index+1,size);
+}
+
 int main(){
     int num;
     cout << "Enter a number : " ;
@@ -166,4 +174,14 @@ int main(){
     palindrome(s_string,0,s_string.length()-1) ;
     cout<< endl;
     cout << "Is it a palindrome using bool function: " << palin(s_string,0,s_string.length()-1);
+    int arr[100];
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+    cout << "Enter the elements of the array: ";
+    for(int i=0;i<size;i++){
+        cin >> arr[i];
+    }
+    cout << "Maximum element in the array is : " << maximum(arr,1,arr[0],size);
+    cout << "Sum of elements of the array : " << sum_of_arr(arr,0,size);
 }
