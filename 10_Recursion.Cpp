@@ -102,15 +102,16 @@ void reverse_str(string &s, int left , int right){
     reverse_str(s, left+1,right-1);
 }
 
+
 void palindrome(string &s,int left,int right){
     if (s[left] != s[right]){
         cout << "Not a palindrome!";
     }
-    else {
+    else {                                 //using a return after not a plaindrom works same as using an else here
         if (left >=right){
-            cout << "It is a palindrome";
-        return;
-    }
+            cout << "It's a palindrome";
+            return;
+        }
         palindrome(s,left+1,right-1);
     }
 }
@@ -140,6 +141,62 @@ int sum_of_arr(int arr[],int index, int size){
     return arr[index] + sum_of_arr(arr,index+1,size);
 }
 
+void reverse_arr(int arr[],int left,int right){
+    if (left >= right){
+        return ;
+    }
+    swap(arr[left],arr[right]);
+    reverse_arr(arr,left+1,right-1);
+}
+
+bool check_sorted_arr_bool(int arr[],int index1, int size){
+    if (index1==size-1){
+        return true;
+    }
+    if (arr[index1] > arr[index1+1]){
+        return false;
+    }
+    return check_sorted_arr_bool(arr,index1+1,size);
+}
+
+void check_sorted_array(int arr[],int index1,int size){
+    if(index1== size-1){
+        cout <<"Array is sorted.";
+        return;
+    }
+    if (arr[index1] > arr[index1+1]){
+        cout << "Array is not sorted.";
+        return;
+    }
+    check_sorted_array(arr,index1+1,size);
+}
+
+int first_occurence(int arr[],int curindex,int element,int size){
+    if (curindex == size){
+        return -1;
+    }
+    if (arr[curindex] == element){
+        return curindex;
+        }
+    return first_occurence(arr,curindex+1,element,size);
+}
+
+/* or a void function : 
+void first_occurence_of_ele(int arr[], int curindex, int element, int size){
+    if(curindex == size){
+        cout << "Element not found!";
+        return;
+    }
+
+    if(arr[curindex] == element){
+        cout << "Element found at " << curindex;
+        return;
+    }
+
+    first_occurence(arr, curindex+1, element, size);
+}
+*/
+
 int main(){
     int num;
     cout << "Enter a number : " ;
@@ -166,14 +223,16 @@ int main(){
     cout << "Count of number of digits in " << long_num << " : " << count_digits(long_num) << endl;
     cout << "Sum of digits of the long number: " << sum_of_digits(long_num) << endl ;
     cout << "Reverse of the number : " << reverse_num(long_num)<< endl;
+    //reversing strings : 
     string s_string;
     cout << "Enter a string : ";
     cin >> s_string;
     reverse_str(s_string,0,s_string.length()-1);
     cout << "Reverse of a string : " << s_string << endl ;
+    //Palindrome 
     palindrome(s_string,0,s_string.length()-1) ;
     cout<< endl;
-    cout << "Is it a palindrome using bool function: " << palin(s_string,0,s_string.length()-1);
+    cout << "Palindrome using bool function ? : " << palin(s_string,0,s_string.length()-1)<<endl;
     int arr[100];
     int size;
     cout << "Enter the size of the array: ";
@@ -182,6 +241,21 @@ int main(){
     for(int i=0;i<size;i++){
         cin >> arr[i];
     }
-    cout << "Maximum element in the array is : " << maximum(arr,1,arr[0],size);
-    cout << "Sum of elements of the array : " << sum_of_arr(arr,0,size);
+    cout << "Maximum element in the array is : " << maximum(arr,1,arr[0],size) <<endl;
+    cout << "Sum of elements of the array : " << sum_of_arr(arr,0,size)<<endl;
+    reverse_arr(arr,0,size-1);
+    cout << "Reverse of the array is : ";
+    for(int i=0;i< size;i++){
+        cout << arr[i] << "  ";
+    }
+    cout << endl;
+    cout << "Is the array sorted ? ";
+    check_sorted_array(arr,0,size);
+    cout <<endl;
+    cout <<"Checking by bool function : " << check_sorted_arr_bool(arr,0,size)<<endl;
+    //Checking first occurence of the element : 
+    int element;
+    cout << "Enter the element you want to search in the array: ";
+    cin >> element;
+    cout << "Present At : "<< first_occurence(arr,0,element,size)<<endl;
 }
