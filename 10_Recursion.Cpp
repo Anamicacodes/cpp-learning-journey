@@ -181,6 +181,8 @@ int first_occurence(int arr[],int curindex,int element,int size){
     return first_occurence(arr,curindex+1,element,size);
 }
 
+
+int last_occurence(int arr[], int curindex)
 /* or a void function : 
 void first_occurence_of_ele(int arr[], int curindex, int element, int size){
     if(curindex == size){
@@ -259,4 +261,4 @@ int main(){
     cin >> element;
     cout << "Present At : "<< first_occurence(arr,0,element,size)<<endl;
 }
-//Learning Recursion more concepts!
+
