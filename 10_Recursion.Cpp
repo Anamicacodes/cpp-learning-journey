@@ -182,7 +182,9 @@ int first_occurence(int arr[],int curindex,int element,int size){
 }
 
 
-int last_occurence(int arr[], int curindex)
+int last_occurence(int arr[], int curindex, int element){
+
+}
 /* or a void function : 
 void first_occurence_of_ele(int arr[], int curindex, int element, int size){
     if(curindex == size){
