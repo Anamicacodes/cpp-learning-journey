@@ -186,12 +186,14 @@ int last_occurence(int arr[], int curindex, int element,int size){
     if (curindex == size){
         return -1;
     }
+    int ans = last_occurence(arr,curindex+1,element,size);
+    if (ans!= -1){
+        return ans;
+    }
     if (arr[curindex] == element){
         return curindex;
     }
-    int ans = last_occurence(arr,curindex+1,element,size);
-    
-
+    return -1;
 }
 /* or a void function : 
 void first_occurence_of_ele(int arr[], int curindex, int element, int size){
@@ -270,5 +272,8 @@ int main(){
     cout << "Enter the element you want to search in the array: ";
     cin >> element;
     cout << "Present At : "<< first_occurence(arr,0,element,size)<<endl;
+    //Checking the last occurence
+    cout << "Last occurence of the element in the array : ";
+    cout << last_occurence(arr,0,element,size);
 }
 
