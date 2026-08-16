@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 using namespace std;
 class abc {
     public :
@@ -21,9 +21,10 @@ int factorial(int n){
     for (int i=1;i<=n;i++){
         ans =ans *i;
     }
-    */
+    
 }
-
+ */
+/*
 //pattern printing 
 
 int main(){
@@ -116,7 +117,7 @@ int main(){
     }
     cout << endl;
 }
-    */
+    
    for (int i=1;i<=6;i++){
     cout << "* ";
    }
@@ -202,7 +203,7 @@ cout << endl;
         cout << "\n";
     }
 
-    /*
+    
     int n;
     cout << "Enter a number to find its factorial : ";
     cin >> n;
@@ -255,6 +256,73 @@ cout << endl;
             high = mid-1;
         }
 }
-        */
 
 }
+        */
+/*
+//14august 2026 
+#include <iostream> 
+using namespace std;
+bool is_prime(int n){           //order of root n
+    for(int i=2; i<n;i++){
+        if( n%i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+bool is_prime_or_not(int n){           //order of root n 
+    for(int i=2; i*i <=n ;i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+int main(){
+    int num;
+    cout << "Enter a number : ";
+    cin >> num;
+    if (is_prime(num))
+        cout << "Prime number";
+    else 
+        cout << "Not Prime";
+} 
+*/
+
+/*
+//to find the minimum distance required to reach or exceed 500
+#include <iostream>
+using namespace std;
+int main(){
+    for (int i=1;i<=500;i++){
+        if((i*i + 4*i +7) >=500){       //complexity is order of root n
+            cout << i;
+            break;
+        }
+    }
+}*/
+
+/*//Binary search code for looking for a first greatest element :
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout << "Enter the value of n : ";
+    cin >> n;
+    int low =0 ;
+    int high = n;
+    int target = 500;
+    int mid = (low + high)/2;
+    int value = mid*mid + 4*mid + 7 ;
+    while(low<high){
+    if ( value > n){
+        high = mid -1;
+    }
+    else {
+        low =  mid +1;
+    }
+}
+}
+*/
