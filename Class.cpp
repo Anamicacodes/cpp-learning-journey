@@ -326,3 +326,24 @@ int main(){
 }
 }
 */
+
+//17 august :
+/*
+//after how many rotaations the input array has been formed : so we have to find the index of the smallest element
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[10] = {14,15,16,17,18,19,3,4,5,6};
+    int count=0;
+    // to find the index of 3
+    for(int i=0;i<=8;i++){          
+        if(arr[i] > arr[i-1]){          //linear search 
+            count++ ;
+        }
+        else {
+            cout << count;
+            break;
+        }
+    }
+}
+*/

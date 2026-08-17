@@ -1,5 +1,4 @@
 //Pointers dont exist in Java or python but they do in C,Cpp
-
 #include <iostream> 
 using namespace std;
 void test(int &x, int y){
@@ -13,14 +12,13 @@ void pointer_method(int *x, int y){
     y *=2;         //call by value
     cout << *x <<y;
 }
-
 int main(){
     int a =15;
     int* p = &a;
     cout << a << endl;
     cout << p << endl;
     cout << *p << endl;
-
+    
     int x=20;
     int *j =&x;
     *j =*j +1;
@@ -44,5 +42,6 @@ int main(){
     int b = 10;
     int *p = &a;
     *p = b;          //is pointing differently now or assigning 
-    cout << a << " " << b;    
+    cout << a << " " << b;
+
 }
