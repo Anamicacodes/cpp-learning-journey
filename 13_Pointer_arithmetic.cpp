@@ -11,6 +11,5 @@ cout << *--p << endl;
 int* start = &arr[1];
 int* end = &end[4];
 int diff = end - start;
-
 cout << diff << endl;
 }
