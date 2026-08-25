@@ -1,17 +1,11 @@
-//find the maximum sum subarray 
-//ans is 8 in this case : 
+//find the frequency occurence of the element more than the half of the size of the array 
+//ans is 3 in this case : 
+// problem no 169 on leetcode 
+
 #include <iostream>
 using namespace std;
 int main(){
-    int arr[11] = {1,2,-4,6,1,-5,4,2,-7,-9,4};
-    int temp =1, sum =0    ;
-    for(int i=1; i<11;i++){
-        if (arr[i] > arr[i-1]){
-            temp++;
-            ans = max(temp,ans);
-        }
-        else 
-            temp =1;
-    }
-    cout << ans ;
+    int arr[9] = {1,3,3,2,4,3,3,2,3};
+    int size = (sizeof(arr) / sizeof(arr[0]) )  /2;
+    cout << size;
 }
