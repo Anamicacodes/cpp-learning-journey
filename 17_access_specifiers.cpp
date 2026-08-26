@@ -9,9 +9,11 @@ class demo{
         int c;
         void set() {a=10;b=20;c=30;}
         void show(){
-            cout << a << b << c << endl;
+            cout << a << " " << b << " " << c << endl;
         }
-}
+};
 int main(){
-    show();
+    demo d;
+    d.set();
+    d.show();
 }
