@@ -1,18 +1,24 @@
-//26 August 
 #include <iostream>
 using namespace std;
+class lpu {
+    public  : 
+        int x;
+        string name;
+};
+class student : public lpu{
+    public : 
+        int a;
+        float height;
+};
 int main(){
-    int arr[8] = {4,8,7,6,5,3,2,1};
-    for (int i=1;i<8;i++){
-        int x = arr[i];
-        int j=i-1;
-        while(j >=0 and arr[j]>x){
-            arr[j+1] = arr[j];
-            j--;
-        }
-        arr[j+1] =x;
-    }
-    for(int i=0;i<8;i++){
-        cout << arr[i]<< " ";
-    }
+    lpu obj;
+    student s1;
+    obj.x =15;  
+    obj.name = "Anamica";
+    s1.a = 8;
+    s1.height = 9.2;
+    cout << obj.x << "   ";
+    cout << obj.name<< "   ";
+    cout << s1.a<< "   ";
+    cout << s1.height;
 }
