@@ -1,11 +1,18 @@
-//find the frequency occurence of the element more than the half of the size of the array 
-//ans is 3 in this case : 
-// problem no 169 on leetcode 
-
+//26 August 
 #include <iostream>
 using namespace std;
 int main(){
-    int arr[9] = {1,3,3,2,4,3,3,2,3};
-    int size = (sizeof(arr) / sizeof(arr[0]) )  /2;
-    cout << size;
+    int arr[8] = {4,8,7,6,5,3,2,1};
+    for (int i=1;i<8;i++){
+        int x = arr[i];
+        int j=i-1;
+        while(j >=0 and arr[j]>x){
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] =x;
+    }
+    for(int i=0;i<8;i++){
+        cout << arr[i]<< " ";
+    }
 }
