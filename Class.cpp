@@ -1,24 +1,14 @@
 #include <iostream>
 using namespace std;
-class lpu {
-    public  : 
-        int x;
-        string name;
-};
-class student : public lpu{
-    public : 
-        int a;
-        float height;
-};
 int main(){
-    lpu obj;
-    student s1;
-    obj.x =15;  
-    obj.name = "Anamica";
-    s1.a = 8;
-    s1.height = 9.2;
-    cout << obj.x << "   ";
-    cout << obj.name<< "   ";
-    cout << s1.a<< "   ";
-    cout << s1.height;
+    int arr[10] = {2,4,1,7,6,5,4,3,9,2};
+    for(int i = 1; i<10;i++){
+        arr[i] = arr[i] + arr[i-1];
+    }
+    int right;
+    int left;
+    cin >> right;
+    cin >> left;
+    int sum= arr[right] - arr[left - 1];
+    cout << sum;
 }
