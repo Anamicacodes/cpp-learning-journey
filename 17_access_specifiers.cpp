@@ -15,13 +15,16 @@ class demo{
 class child : public demo {
     public : 
         void access(){
-            a = 10; b = 20 ; c =30;
+            // a = 10; we cant access it 
+            b = 20 ; c =30;
         }
 };
 int main(){
     demo d;
     d.set();
     d.show();
-    d.a = 5; d.b = 10; d.c = 40;
+    // d.a = 5; yeilds error because private n can be used inside the class only 
+    // d.b = 10; yeilds error because private and can be accessed inside the inhertied class only
+    d.c = 40;
     cout << d.c;
 }
