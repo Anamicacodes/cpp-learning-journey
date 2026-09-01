@@ -1,22 +1,37 @@
-//Create a funciton with child and parent class with function overloading 
-// in this inheritance and function overloading both are taking place 
 #include <iostream>
 using namespace std;
 class Parent {
     public: 
-        int operation(int a ,int b){
-            int total = a+b;
-            return total;
-        }
+    int sum(int a,int b){
+        return a+b;
+    }
 };
-class Child : public Parent {
+class A: public Parent {
     public: 
-        int operation(int a,int b) {
-            int total = a-b;
-            return total;
-        }
+    int diff(int a,int b){
+        return a-b;
+    }
+};
+class B: public Parent {
+    public: 
+    int mul(int a,int b){
+        return a*b;
+    }
+};
+class C: public Parent {
+    public: 
+    int div(int a,int b){
+        return a/b;
+    }
 };
 int main(){
-    Child C;
-    cout << C.operation(7,3);
+    A a;
+    cout << "Sum from parent of 5 and 3 is : " << a.sum(5,3)<< endl;
+    cout << "Difference of 5 and 3 is : "<< a.diff(5,3)<< endl;
+    B b;
+    cout << "Multiply of 5 and 3 is : " <<b.mul(5,3) << endl;
+    C c;
+    cout << "Division of 10 and 5 is : " <<c.div(10,5) << endl;
+
+
 }
