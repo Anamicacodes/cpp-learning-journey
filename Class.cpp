@@ -1,20 +1,22 @@
-//inside a class, make two functions having the same name with different parameters and call them from the child
+//Create a funciton with child and parent class with function overloading 
+// in this inheritance and function overloading both are taking place 
 #include <iostream>
 using namespace std;
-class functionss{
-    public : 
-        int add(int a,int b){
-          int sum = a+b;
-            return sum;
-        }
-        string add(string a,string b){
-            string sum = a+b;
-            return sum;
+class Parent {
+    public: 
+        int operation(int a ,int b){
+            int total = a+b;
+            return total;
         }
 };
-
+class Child : public Parent {
+    public: 
+        int operation(int a,int b) {
+            int total = a-b;
+            return total;
+        }
+};
 int main(){
-    functionss f;
-    cout << f.add(5,3) << endl;
-    cout << f.add("Ana","Mica");
+    Child C;
+    cout << C.operation(7,3);
 }
