@@ -1,16 +1,19 @@
-//31 august 2026 
-//an example of insertion sort : 
-//print the absolute difference : minimum differnece between any two array elements  
-#include <bits/stdc++.h>
+//inside a class, make two functions having the same name with different parameters and call them from the child
+#include <iostream>
 using namespace std;
+class functionss{
+    public : 
+        int add(int a,int b){
+          int sum = a+b;
+            return sum;
+        }
+        string add(string a,string b){
+            string sum = a+b;
+            return sum;
+        }
+};
 int main(){
-    int arr [8] = {7,2,6,14,33,19,43,9};
-    int mindiff = INT_MAX;
-    sort(arr,arr+8);
-    for(int i=0;i<8;i++){
-        int diff = abs (arr[i]- arr[i+1]);
-        if (diff < mindiff)
-            mindiff = diff;
-    }
-    cout << mindiff;
+    functionss f;
+    cout << f.add(5,3) << endl;
+    cout << f.add("Ana","Mica");
 }
