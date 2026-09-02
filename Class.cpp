@@ -1,15 +1,9 @@
-//Inline Functions : 
-//2nd september
 #include <iostream>
 using namespace std;
-inline int addition(int a,int b){
-    return a+b;
-}
-int add(int a,int b=5){   //we cant pass default arguments into the first element 
-    return a+b;
+int addition(int a=4,int b=5,int c =8){   
+    return a+b+c;
 }
 int main(){
-    int x = addition(10,25);
+    int x = addition(2,3,4);     //values get overridden
     cout << x << endl;
-    cout << add(25);
 }
