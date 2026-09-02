@@ -1,9 +1,19 @@
 #include <iostream>
 using namespace std;
-int addition(int a=4,int b=5,int c =8){   
-    return a+b+c;
+void func1(int a,int b){
+    a= a+b;
+    return;
+}
+void func2(int &a,int &b){
+    a= a+b;
+    return;
 }
 int main(){
-    int x = addition(2,3,4);     //values get overridden
-    cout << x << endl;
+    int a =5;
+    int b =6;
+    cout << a << " " << b << endl;
+    func1(a,b);
+    cout << "Answer by call by value : " << a << " " << b<< endl;
+    func2(a,b);
+    cout << "Answer by call by reference : " << a << " " << b;
 }
