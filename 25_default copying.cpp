@@ -8,7 +8,7 @@ class Student {
 int main(){
     Student s1;
     s1.roll = 101;
-    s1.name = "Amit" ;
+    s1.name = "Jiya" ;
     Student s2 = s1;
     cout << s2.roll  << " " << s2.name;
 }
