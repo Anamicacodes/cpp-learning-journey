@@ -14,6 +14,4 @@ int main(){
     if (count ==0) cout << true;     //can rotate 0 times
     else if (count == 1 and arr[0] > arr[n-1]) cout << true;     //can rotate 1 time
     else false;
-
-
 }
